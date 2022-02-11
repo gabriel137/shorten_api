@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  db:
+      image: postgres:11.7
+      container_name: short_db
+      environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=short_api_dev
+      ports:
+        - "5432:5432"
+      volumes:
+        - postgres_data:/var/lib/postgresql/data/
+      logging:
+        driver: json-file
+        options:
+          max-size: "50m"
+          max-file: "10"
+
+volumes:
+  postgres_data: 
