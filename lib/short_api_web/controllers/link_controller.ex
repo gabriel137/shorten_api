@@ -1,10 +1,10 @@
-defmodule ShortApiWeb.LinkController do
-  use ShortApiWeb, :controller
+defmodule ShortenApiWeb.LinkController do
+  use ShortenApiWeb, :controller
 
-  alias ShortApi.Links
-  alias ShortApi.Links.Link
+  alias ShortenApi.Links
+  alias ShortenApi.Links.Link
 
-  action_fallback ShortApiWeb.FallbackController
+  action_fallback ShortenApiWeb.FallbackController
 
   def get_and_redirect(conn, %{"id" => id}) do
     IO.inspect id, label: "ID"

@@ -1,4 +1,4 @@
-defmodule ShortApi.Application do
+defmodule ShortenApi.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,20 +9,20 @@ defmodule ShortApi.Application do
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      ShortApi.Repo,
+      ShortenApi.Repo,
       # Start the Telemetry supervisor
-      ShortApiWeb.Telemetry,
+      ShortenApiWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: ShortApi.PubSub},
+      {Phoenix.PubSub, name: ShortenApi.PubSub},
       # Start the Endpoint (http/https)
-      ShortApiWeb.Endpoint
-      # Start a worker by calling: ShortApi.Worker.start_link(arg)
-      # {ShortApi.Worker, arg}
+      ShortenApiWeb.Endpoint
+      # Start a worker by calling: ShortenApi.Worker.start_link(arg)
+      # {ShortenApi.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: ShortApi.Supervisor]
+    opts = [strategy: :one_for_one, name: ShortenApi.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -30,7 +30,7 @@ defmodule ShortApi.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    ShortApiWeb.Endpoint.config_change(changed, removed)
+    ShortenApiWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

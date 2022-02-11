@@ -1,5 +1,5 @@
-defmodule ShortApiWeb.ErrorView do
-  use ShortApiWeb, :view
+defmodule ShortenApiWeb.ErrorView do
+  use ShortenApiWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

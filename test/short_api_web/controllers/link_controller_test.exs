@@ -1,9 +1,9 @@
-defmodule ShortApiWeb.LinkControllerTest do
-  use ShortApiWeb.ConnCase
+defmodule ShortenApiWeb.LinkControllerTest do
+  use ShortenApiWeb.ConnCase
 
-  import ShortApi.LinksFixtures
+  import ShortenApi.LinksFixtures
 
-  alias ShortApi.Links.Link
+  alias ShortenApi.Links.Link
 
   @create_attrs %{
     hash: "some hash",

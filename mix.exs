@@ -1,9 +1,9 @@
-defmodule ShortApi.MixProject do
+defmodule ShortenApi.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :short_api,
+      app: :shorten_api,
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule ShortApi.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {ShortApi.Application, []},
+      mod: {ShortenApi.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

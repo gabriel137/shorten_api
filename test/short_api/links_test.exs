@@ -1,12 +1,12 @@
-defmodule ShortApi.LinksTest do
-  use ShortApi.DataCase
+defmodule ShortenApi.LinksTest do
+  use ShortenApi.DataCase
 
-  alias ShortApi.Links
+  alias ShortenApi.Links
 
   describe "links" do
-    alias ShortApi.Links.Link
+    alias ShortenApi.Links.Link
 
-    import ShortApi.LinksFixtures
+    import ShortenApi.LinksFixtures
 
     @invalid_attrs %{hash: nil, url: nil}
 

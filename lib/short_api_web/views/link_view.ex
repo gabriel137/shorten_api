@@ -1,6 +1,6 @@
-defmodule ShortApiWeb.LinkView do
-  use ShortApiWeb, :view
-  alias ShortApiWeb.LinkView
+defmodule ShortenApiWeb.LinkView do
+  use ShortenApiWeb, :view
+  alias ShortenApiWeb.LinkView
 
   def render("index.json", %{links: links}) do
     %{data: render_many(links, LinkView, "link.json")}

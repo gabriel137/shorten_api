@@ -1,17 +1,17 @@
-defmodule ShortApiWeb.Router do
-  use ShortApiWeb, :router
+defmodule ShortenApiWeb.Router do
+  use ShortenApiWeb, :router
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/api", ShortApiWeb do
+  scope "/api", ShortenApiWeb do
     pipe_through :api
 
     resources "/links", LinkController, except: [:edit]
   end
 
-  scope "/", ShortApiWeb do
+  scope "/", ShortenApiWeb do
     get "/:id", LinkController, :get_and_redirect
   end
 
@@ -27,7 +27,7 @@ defmodule ShortApiWeb.Router do
 
     scope "/" do
       pipe_through [:fetch_session, :protect_from_forgery]
-      live_dashboard "/dashboard", metrics: ShortApiWeb.Telemetry
+      live_dashboard "/dashboard", metrics: ShortenApiWeb.Telemetry
     end
   end
 

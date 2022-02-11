@@ -1,12 +1,12 @@
-defmodule ShortApi.Links do
+defmodule ShortenApi.Links do
   @moduledoc """
   The Links context.
   """
 
   import Ecto.Query, warn: false
-  alias ShortApi.Repo
+  alias ShortenApi.Repo
 
-  alias ShortApi.Links.Link
+  alias ShortenApi.Links.Link
 
   @doc """
   Returns the list of links.

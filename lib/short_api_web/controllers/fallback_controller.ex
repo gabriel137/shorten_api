@@ -1,16 +1,16 @@
-defmodule ShortApiWeb.FallbackController do
+defmodule ShortenApiWeb.FallbackController do
   @moduledoc """
   Translates controller action results into valid `Plug.Conn` responses.
 
   See `Phoenix.Controller.action_fallback/1` for more details.
   """
-  use ShortApiWeb, :controller
+  use ShortenApiWeb, :controller
 
   # This clause handles errors returned by Ecto's insert/update/delete.
   def call(conn, {:error, %Ecto.Changeset{} = changeset}) do
     conn
     |> put_status(:unprocessable_entity)
-    |> put_view(ShortApiWeb.ChangesetView)
+    |> put_view(ShortenApiWeb.ChangesetView)
     |> render("error.json", changeset: changeset)
   end
 
@@ -18,7 +18,7 @@ defmodule ShortApiWeb.FallbackController do
   def call(conn, {:error, :not_found}) do
     conn
     |> put_status(:not_found)
-    |> put_view(ShortApiWeb.ErrorView)
+    |> put_view(ShortenApiWeb.ErrorView)
     |> render(:"404")
   end
 end

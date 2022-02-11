@@ -1,4 +1,4 @@
-# ShortApi
+# ShortenApi
 
 To start your Phoenix server:
 

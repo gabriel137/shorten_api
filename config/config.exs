@@ -7,8 +7,8 @@
 # General application configuration
 import Config
 
-config :short_api,
-  ecto_repos: [ShortApi.Repo]
+config :shorten_api,
+  ecto_repos: [ShortenApi.Repo]
 
 # config :ecto3_mnesia,
 # host: {:system, :atom, "MNESIA_HOST", Kernel.node()},
@@ -18,10 +18,10 @@ config :short_api,
 #   dir: 'priv/data/mnesia'
 
 # Configures the endpoint
-config :short_api, ShortApiWeb.Endpoint,
+config :shorten_api, ShortenApiWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: ShortApiWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: ShortApi.PubSub,
+  render_errors: [view: ShortenApiWeb.ErrorView, accepts: ~w(json), layout: false],
+  pubsub_server: ShortenApi.PubSub,
   live_view: [signing_salt: "xyrfqhmZ"]
 
 # Configures the mailer
@@ -31,7 +31,7 @@ config :short_api, ShortApiWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :short_api, ShortApi.Mailer, adapter: Swoosh.Adapters.Local
+config :shorten_api, ShortenApi.Mailer, adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false

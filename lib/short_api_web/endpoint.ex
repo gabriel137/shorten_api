@@ -1,12 +1,12 @@
-defmodule ShortApiWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :short_api
+defmodule ShortenApiWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :shorten_api
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_short_api_key",
+    key: "_shorten_api_key",
     signing_salt: "Lpn7SBAu"
   ]
 
@@ -18,7 +18,7 @@ defmodule ShortApiWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :short_api,
+    from: :shorten_api,
     gzip: false,
     only: ~w(assets fonts images favicon.ico robots.txt)
 
@@ -26,7 +26,7 @@ defmodule ShortApiWeb.Endpoint do
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :short_api
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :shorten_api
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -44,5 +44,5 @@ defmodule ShortApiWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug ShortApiWeb.Router
+  plug ShortenApiWeb.Router
 end

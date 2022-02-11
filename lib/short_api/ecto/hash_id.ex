@@ -1,4 +1,4 @@
-defmodule ShortApi.Ecto.HashId do
+defmodule ShortenApi.Ecto.HashId do
   @behaviour Ecto.Type
   @hash_id_length 8
 

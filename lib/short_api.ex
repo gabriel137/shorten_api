@@ -1,6 +1,6 @@
-defmodule ShortApi do
+defmodule ShortenApi do
   @moduledoc """
-  ShortApi keeps the contexts that define your domain
+  ShortenApi keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

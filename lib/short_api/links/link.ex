@@ -1,7 +1,7 @@
-defmodule ShortApi.Links.Link do
+defmodule ShortenApi.Links.Link do
   use Ecto.Schema
   import Ecto.Changeset
-  alias ShortApi.Ecto.HashId
+  alias ShortenApi.Ecto.HashId
 
   @primary_key {:hash, HashId, [autogenerate: true]}
   @derive {Phoenix.Param, key: :hash}

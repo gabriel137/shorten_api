@@ -1,7 +1,7 @@
-defmodule ShortApi.LinksFixtures do
+defmodule ShortenApi.LinksFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `ShortApi.Links` context.
+  entities via the `ShortenApi.Links` context.
   """
 
   @doc """
@@ -24,7 +24,7 @@ defmodule ShortApi.LinksFixtures do
         hash: unique_link_hash(),
         url: unique_link_url()
       })
-      |> ShortApi.Links.create_link()
+      |> ShortenApi.Links.create_link()
 
     link
   end

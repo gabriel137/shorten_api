@@ -1,12 +1,12 @@
-defmodule ShortApiWeb do
+defmodule ShortenApiWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use ShortApiWeb, :controller
-      use ShortApiWeb, :view
+      use ShortenApiWeb, :controller
+      use ShortenApiWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule ShortApiWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: ShortApiWeb
+      use Phoenix.Controller, namespace: ShortenApiWeb
 
       import Plug.Conn
-      import ShortApiWeb.Gettext
-      alias ShortApiWeb.Router.Helpers, as: Routes
+      import ShortenApiWeb.Gettext
+      alias ShortenApiWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/short_api_web/templates",
-        namespace: ShortApiWeb
+        root: "lib/shorten_api_web/templates",
+        namespace: ShortenApiWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -54,7 +54,7 @@ defmodule ShortApiWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import ShortApiWeb.Gettext
+      import ShortenApiWeb.Gettext
     end
   end
 
@@ -63,9 +63,9 @@ defmodule ShortApiWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import ShortApiWeb.ErrorHelpers
-      import ShortApiWeb.Gettext
-      alias ShortApiWeb.Router.Helpers, as: Routes
+      import ShortenApiWeb.ErrorHelpers
+      import ShortenApiWeb.Gettext
+      alias ShortenApiWeb.Router.Helpers, as: Routes
     end
   end
 
