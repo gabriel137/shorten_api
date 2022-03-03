@@ -1,6 +1,15 @@
 defmodule ShortenApiWeb.Router do
   use ShortenApiWeb, :router
 
+  pipeline :browser do
+    plug :accepts, ["html"]
+    plug :fetch_session
+    plug :fetch_live_flash
+    plug :put_root_layout, {ShortenApiWeb.LayoutView, :root}
+    plug :protect_from_forgery
+    plug :put_secure_browser_headers
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -12,6 +21,9 @@ defmodule ShortenApiWeb.Router do
   end
 
   scope "/", ShortenApiWeb do
+    pipe_through :browser
+
+    live "/", HomeLive
     get "/:id", LinkController, :get_and_redirect
   end
 

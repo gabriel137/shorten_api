@@ -45,7 +45,9 @@ defmodule ShortenApi.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:ecto3_mnesia, "~> 0.2.0"}
+      {:ecto3_mnesia, "~> 0.2.0"},
+      {:phoenix_live_view, "~> 0.17.6"},
+      {:floki, ">= 0.30.0", only: :test}
     ]
   end
 

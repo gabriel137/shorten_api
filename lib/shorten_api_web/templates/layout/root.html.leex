@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge; frame-src: self;"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,maximum-scale=1.0,minimum-scale=1, minimal-ui" />
+    <title><%= assigns[:page_title] || "Inova Shortcut" %></title>
+
+    <link rel="icon" type="image/png" sizes="100X100" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
+    <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+
+    <link rel="icon" type="image/x-icon" href="<%= Routes.static_path(@conn, "/favicon.ico") %>">
+
+    <%= csrf_meta_tag() %>
+  </head>
+
+      <body class="font-sans overflow-y-hidden">
+      <%= @inner_content %>
+      <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+      <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    </body>
+
+</html>

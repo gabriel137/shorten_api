@@ -10,7 +10,8 @@ defmodule ShortenApiWeb.Endpoint do
     signing_salt: "Lpn7SBAu"
   ]
 
-  socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
+  socket "/live", Phoenix.LiveView.Socket,
+    websocket: [connect_info: [:peer_data, :x_headers, :uri, session: @session_options]]
 
   # Serve at "/" the static files from "priv/static" directory.
   #

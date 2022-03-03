@@ -8,8 +8,8 @@ import Config
 config :shorten_api, ShortenApi.Repo,
   username: "postgres",
   password: "postgres",
-  database: "shorten_api_test#{System.get_env("MIX_TEST_PARTITION")}",
-  hostname: "localhost",
+  database: "short_api_test#{System.get_env("MIX_TEST_PARTITION")}",
+  hostname: "db",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
